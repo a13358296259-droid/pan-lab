@@ -28,18 +28,27 @@ export const NAV = [
 ];
 
 /**
+ * 站点根路径。
+ * 注意：Astro 的 `import.meta.env.BASE_URL` 在构建产物里**不一定以斜杠结尾**
+ * （base 配成 `/pan-lab` 时它就是 `/pan-lab`），直接拼字符串会拼出
+ * `/pan-labresearch/` 这种坏链接。这里统一补上结尾斜杠。
+ */
+const BASE = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
+/**
  * 站内页面链接。
  * 会自动带上 astro.config.mjs 里配置的 base 路径，所以部署到子目录也不会失效。
  */
 export function link(path = ''): string {
-  const base = import.meta.env.BASE_URL; // 形如 "/" 或 "/repo/"
   const clean = String(path).replace(/^\/+|\/+$/g, '');
-  return clean ? `${base}${clean}/` : base;
+  return clean ? `${BASE}${clean}/` : BASE;
 }
 
 /** public 目录里的静态文件链接（图片、图标等）。 */
 export function asset(path: string): string {
-  return import.meta.env.BASE_URL + String(path).replace(/^\/+/, '');
+  return BASE + String(path).replace(/^\/+/, '');
 }
 
 /** 把 YYYY-MM-DD 显示成 2026-10-15 */
