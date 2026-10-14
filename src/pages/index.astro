@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { SITE, link, fmtDate } from '../consts';
 import { RESEARCH, PROJECTS } from '../data/research';
+import { HERO_PHOTOS } from '../data/photos';
+import PhotoStack from '../components/PhotoStack.astro';
 
 const publications = await getCollection('publications');
 const latestPubs = [...publications]
@@ -28,34 +30,42 @@ const stats = [
       class="pointer-events-none absolute -top-32 -right-24 h-80 w-80 rounded-full bg-cau-light opacity-80 blur-3xl"
     >
     </div>
-    <div class="relative mx-auto max-w-6xl px-5 py-20 md:py-28">
-      <span class="tag">{SITE.school} · {SITE.college}</span>
+    <div class="relative mx-auto max-w-6xl px-5 py-20 md:py-24">
+      <div class="grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-16">
+        <div>
+          <span class="tag">{SITE.school} · {SITE.college}</span>
 
-      <h1 class="mt-5 text-4xl leading-tight font-bold tracking-tight md:text-5xl">
-        {SITE.name}
-      </h1>
+          <h1 class="mt-5 text-4xl leading-tight font-bold tracking-tight md:text-5xl">
+            {SITE.name}
+          </h1>
 
-      <p class="mt-3 text-sm tracking-[0.2em] text-muted uppercase">{SITE.nameEn}</p>
+          <p class="mt-3 text-sm tracking-[0.2em] text-muted uppercase">{SITE.nameEn}</p>
 
-      <p class="mt-6 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
-        {SITE.intro}
-      </p>
+          <p class="mt-6 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
+            {SITE.intro}
+          </p>
 
-      <div class="mt-9 flex flex-wrap gap-4">
-        <a href={link('join')} class="btn btn-primary">加入我们 →</a>
-        <a href={link('research')} class="btn btn-ghost">了解研究方向</a>
+          <div class="mt-9 flex flex-wrap gap-4">
+            <a href={link('join')} class="btn btn-primary">加入我们 →</a>
+            <a href={link('research')} class="btn btn-ghost">了解研究方向</a>
+          </div>
+
+          <dl class="mt-14 grid max-w-xl grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
+            {
+              stats.map((s) => (
+                <div>
+                  <dt class="text-3xl font-bold text-cau">{s.value}</dt>
+                  <dd class="mt-1 text-xs leading-snug text-muted">{s.label}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+
+        <div class="lg:pl-4">
+          <PhotoStack photos={HERO_PHOTOS} />
+        </div>
       </div>
-
-      <dl class="mt-16 grid max-w-3xl grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
-        {
-          stats.map((s) => (
-            <div>
-              <dt class="text-3xl font-bold text-cau">{s.value}</dt>
-              <dd class="mt-1 text-xs leading-snug text-muted">{s.label}</dd>
-            </div>
-          ))
-        }
-      </dl>
     </div>
   </section>
 

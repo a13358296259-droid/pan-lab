@@ -1,0 +1,108 @@
+---
+import { asset } from '../consts';
+import type { StackPhoto } from '../data/photos';
+
+interface Props {
+  photos: StackPhoto[];
+  hint?: string;
+}
+
+const { photos, hint = '把鼠标移到照片上可以翻阅' } = Astro.props;
+
+// 初始堆叠位置：第 0 张在最前，越靠后越往右上退、越小、越倾斜。
+// 之所以在服务端就把 transform 写进 HTML，是为了避免页面刚加载时所有照片
+// 叠在同一位置闪一下。
+function stackStyle(index: number): string {
+  const x = index * 16;
+  const y = index * -13;
+  const rotate = index === 0 ? 0 : index % 2 === 1 ? 3 : -3.5;
+  const scale = 1 - index * 0.05;
+  return `transform: translate(${x}px, ${y}px) rotate(${rotate}deg) scale(${scale}); z-index: ${photos.length - index};`;
+}
+---
+
+<div class="mx-auto w-full max-w-[440px]" data-photo-stack>
+  <div class="relative aspect-[16/10]">
+    {
+      photos.map((photo, i) => (
+        <figure
+          class="photo-card absolute inset-0 overflow-hidden rounded-2xl border border-cau-line bg-white p-2 shadow-[0_20px_44px_-26px_rgba(0,51,26,0.5)] transition-[transform,box-shadow] duration-500 ease-out will-change-transform"
+          style={stackStyle(i)}
+        >
+          <img
+            src={asset(photo.src)}
+            alt={photo.alt}
+            width="1100"
+            height="688"
+            loading={i === 0 ? 'eager' : 'lazy'}
+            decoding="async"
+            class="h-full w-full rounded-xl object-cover"
+          />
+        </figure>
+      ))
+    }
+  </div>
+
+  {
+    photos.length > 1 && (
+      <p class="mt-5 text-center text-xs text-muted">
+        {hint}
+        <span class="mx-2 text-cau-line">·</span>
+        共 {photos.length} 张
+      </p>
+    )
+  }
+</div>
+
+<script>
+  // 堆叠相册交互：
+  //   鼠标移入 → 立即翻到下一张，之后每 1.6 秒自动翻一张
+  //   鼠标移出 → 停止并回到初始顺序
+  //   点击（手机上没有 hover）→ 翻一张
+  document.querySelectorAll<HTMLElement>('[data-photo-stack]').forEach((stack) => {
+    const cards = Array.from(stack.querySelectorAll<HTMLElement>('.photo-card'));
+    const total = cards.length;
+    if (total < 2) return;
+
+    let active = 0;
+    let timer: number | null = null;
+
+    const apply = () => {
+      cards.forEach((card, i) => {
+        const pos = (i - active + total) % total;
+        const x = pos * 16;
+        const y = pos * -13;
+        const rotate = pos === 0 ? 0 : pos % 2 === 1 ? 3 : -3.5;
+        const scale = 1 - pos * 0.05;
+        card.style.transform = `translate(${x}px, ${y}px) rotate(${rotate}deg) scale(${scale})`;
+        card.style.zIndex = String(total - pos);
+      });
+    };
+
+    const advance = () => {
+      active = (active + 1) % total;
+      apply();
+    };
+
+    apply();
+
+    stack.addEventListener('mouseenter', () => {
+      advance();
+      if (timer === null) timer = window.setInterval(advance, 1600);
+    });
+
+    stack.addEventListener('mouseleave', () => {
+      if (timer !== null) {
+        window.clearInterval(timer);
+        timer = null;
+      }
+      active = 0;
+      apply();
+    });
+
+    stack.addEventListener('click', () => {
+      // 鼠标还停在上面时由定时器接管，避免一次点击翻两张
+      if (timer === null) advance();
+    });
+  });
+</script>
