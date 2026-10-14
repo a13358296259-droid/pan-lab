@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import PublicationList from '../components/PublicationList.astro';
+
+const publications = await getCollection('publications');
+const years = publications.map((p) => p.data.year);
+const first = Math.min(...years);
+const last = Math.max(...years);
+---
+
+<Layout
+  title="发表论文"
+  description="潘保良课题组发表论文列表，按年份倒序排列，可按年份筛选并查看摘要。"
+>
+  <PageHeader
+    title="发表论文"
+    titleEn="Publications"
+    lead={`共收录 ${publications.length} 篇论文，覆盖 ${first}–${last} 年。点击上方年份标签只看那一年的论文；点每条下方的“摘要”可展开英文原文摘要。`}
+  />
+
+  <div class="mx-auto max-w-6xl px-5 py-14">
+    <PublicationList items={publications} />
+
+    <p class="mt-12 text-xs leading-relaxed text-muted">
+      数据来源：PubMed 作者检索（baoliang pan）。DOI 链接指向出版社官方页面。
+    </p>
+  </div>
+</Layout>

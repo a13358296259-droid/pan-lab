@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img" aria-label="中国农业大学动物医学院位置示意图">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4f7f5"/>
+      <stop offset="100%" stop-color="#e8f1ec"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="620" fill="url(#bg)"/>
+
+  <!-- 街区网格 -->
+  <g stroke="#dfe8e2" stroke-width="2">
+    <path d="M0 120H1200M0 250H1200M0 380H1200M0 500H1200"/>
+    <path d="M140 0V620M340 0V620M560 0V620M760 0V620M980 0V620"/>
+  </g>
+
+  <!-- 主干道 -->
+  <g>
+    <rect x="0" y="292" width="1200" height="26" fill="#ffffff"/>
+    <rect x="0" y="296" width="1200" height="2" fill="#cdd9d2"/>
+    <rect x="0" y="312" width="1200" height="2" fill="#cdd9d2"/>
+    <rect x="548" y="0" width="26" height="620" fill="#ffffff"/>
+    <rect x="552" y="0" width="2" height="620" fill="#cdd9d2"/>
+    <rect x="568" y="0" width="2" height="620" fill="#cdd9d2"/>
+  </g>
+
+  <!-- 校园地块 -->
+  <rect x="600" y="60" width="380" height="200" rx="18" fill="#dcece2" stroke="#bfd8cb" stroke-width="2"/>
+  <text x="790" y="150" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="22" fill="#3f6b55">中国农业大学（西校区）</text>
+  <text x="790" y="184" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="16" fill="#6e8b7d">China Agricultural University · West Campus</text>
+
+  <!-- 绿地 -->
+  <ellipse cx="200" cy="470" rx="150" ry="90" fill="#e2efe6"/>
+  <text x="200" y="476" text-anchor="middle" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="15" fill="#7d9a8b">绿化带</text>
+
+  <!-- 定位标记 -->
+  <g transform="translate(560,292)">
+    <circle cx="0" cy="0" r="34" fill="#006633" opacity="0.16"/>
+    <circle cx="0" cy="0" r="20" fill="#006633" opacity="0.28"/>
+    <path d="M0 -34c-11 0-20 9-20 20 0 15 20 35 20 35s20-20 20-35c0-11-9-20-20-20z" fill="#006633" transform="translate(0,6) scale(1.05)"/>
+    <circle cx="0" cy="-8" r="7.5" fill="#ffffff"/>
+  </g>
+
+  <!-- 标注 -->
+  <g font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <rect x="628" y="352" width="452" height="118" rx="14" fill="#ffffff" stroke="#cfe2d8"/>
+    <text x="656" y="392" font-size="24" font-weight="700" fill="#17212b">动物医学院（预防兽医学系）</text>
+    <text x="656" y="428" font-size="17" fill="#5a6b62">北京市海淀区圆明园西路 2 号</text>
+    <text x="656" y="456" font-size="15" fill="#8a9b91">位置示意图 · 精确导航请在地图应用中搜索校名</text>
+  </g>
+
+  <text x="40" y="52" font-family="'PingFang SC','Microsoft YaHei',sans-serif" font-size="18" fill="#7d9a8b">Map / 示意图</text>
+</svg>

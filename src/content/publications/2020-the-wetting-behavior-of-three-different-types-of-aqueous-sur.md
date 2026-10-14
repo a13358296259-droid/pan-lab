@@ -1,0 +1,11 @@
+---
+title: "The wetting behavior of three different types of aqueous surfactant solutions on housefly (Musca domestica) surfaces"
+authors: "Wan Q, Zhao J, Li H, Li H, Wang C, Pan B"
+journal: "Pest Manag Sci"
+year: 2020
+doi: "10.1002/ps.5620"
+pmid: "31525272"
+citation: "35. Pest Manag Sci. 2020 Mar;76(3):1085-1093. doi: 10.1002/ps.5620. Epub 2019 Oct 15."
+---
+
+BACKGROUND: It is difficult for insecticide spray droplets to adhere to highly hydrophobic pest surfaces, and this is an important reason behind the low utilization of pesticides. Greater understanding of the wetting behaviors of agro-surfactants on pest surfaces is of great importance in pesticidal applications. RESULTS: This research investigated the wetting processes of three surfactant solutions [TritonX-100 (TX-100), sodium dodecyl sulfate (SDS) and dodecyl trimethyl ammonium bromide (DTAB)] on housefly surfaces based on surface tension, contact angles and solid-liquid interaction. As the surfactant concentration increased, the wetting abilities of the solutions improved due a decrease in liquid surface tension. The decrease in contact angles followed an inverted 'S' shape until the concentration exceeded the critical micelle concentration, at which point surfactant adsorption was saturated at the interfaces. The nonionic surfactant TX-100 enhanced wettability more than the ionic surfactants SDS and DTAB. The wetting states of the three surfactant solutions on housefly surfaces transformed to the Wenzel state when the surfactant molecules adsorbed at solid-liquid interfaces (ΓSL ) were 3.09-5.36 times higher than those adsorbed at liquid-air interfaces (ΓLV ). More insecticides attached to housefly surfaces and pesticide utilization was significantly improved after adding TX-100 to the pesticide solution. CONCLUSION: Surfactant TX-100 could be a practical and efficient candidate adjuvant for insecticide spraying of houseflies. This research investigated the wetting mechanism of three different types of surfactant solutions on housefly surfaces, and could provide effective guidance for the preparation of insecticide formulations and pesticide adjuvants with better wettability to improve pesticide utilization. © 2019 Society of Chemical Industry.

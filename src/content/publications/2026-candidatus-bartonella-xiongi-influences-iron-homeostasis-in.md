@@ -1,0 +1,11 @@
+---
+title: "Candidatus Bartonella xiongi influences iron homeostasis in the hematophagous mite Dermanyssus gallinae, affecting its reproduction"
+authors: "Sun T, Liu Q, Wang P, Zhang Y, Chen W, Su D, Guo X, Wang B, Pan B"
+journal: "Commun Biol"
+year: 2026
+doi: "10.1038/s42003-026-10671-5"
+pmid: "42477456"
+citation: "1. Commun Biol. 2026 Jul 20. doi: 10.1038/s42003-026-10671-5. Online ahead of print."
+---
+
+Iron is an essential element for most organisms, including hematophagous arthropods, which are critical vectors for dozens of pathogens, seriously affecting the health of human beings and livestock. The mechanisms of iron acquisition by hematophagous arthropods remain incompletely characterized. Symbionts have established nutritionally reciprocal associations with arthropod hosts during long-term coevolution, endowing them with the potential to serve as an iron source. This study employed Dermanyssus gallinae (a notorious hematophagous mite) to explore the role of its key symbiont, Bartonella, in iron supply. A novel species, Candidatus Bartonella xiongi (strain DGB2), was isolated from the hematophagous mite. Genomic metabolic reconstruction showed that DGB2 encodes an hmu system responsible for heme uptake and degradation. Functional validation confirmed that DGB2 utilizes heme through its outer membrane heme receptor, HmuR, and electron donor-dependent heme oxygenase, HmuS. To investigate whether heme-derived iron was supplied to the host by DGB2, an antibiotic-induced dysbiosis model of D. gallinae with DGB2 depletion was established. DGB2 depletion significantly decreased the iron content within both mites and their eggs, as well as the ferritin expression levels, and compromised the reproduction of D. gallinae. Immunization of chickens with inactivated DGB2 vaccine elicited high-titer antibodies and significantly inhibited the fecundity of D. gallinae. Taken together, the present study demonstrates that the novel symbiont Candidatus Bartonella xiongi plays key roles in iron homeostasis of D. gallinae and contributes to the regulation of mite's reproductive capacity. Targeting symbionts related to iron homeostasis represents a promising biocontrol strategy for hematophagous vectors.

@@ -1,0 +1,54 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { asset } from '../consts';
+
+interface Props {
+  member: CollectionEntry<'members'>;
+}
+
+const { member } = Astro.props;
+const d = member.data;
+const initials = d.name.replace(/[^\u4e00-\u9fa5A-Za-z]/g, '').slice(0, 2) || '·';
+const photoSrc = d.photo ? asset(d.photo) : '';
+---
+
+<article class="card flex flex-col">
+  <div class="flex items-center gap-4">
+    {
+      photoSrc ? (
+        <img
+          src={photoSrc}
+          alt={d.name}
+          width="80"
+          height="80"
+          loading="lazy"
+          class="h-20 w-20 shrink-0 rounded-full border border-cau-line object-cover"
+        />
+      ) : (
+        <span class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-cau-light text-xl font-bold text-cau">
+          {initials}
+        </span>
+      )
+    }
+    <div class="min-w-0">
+      <h3 class="text-base font-bold text-ink">{d.name}</h3>
+      {d.name_en && <p class="text-xs tracking-wide text-muted">{d.name_en}</p>}
+      <p class="mt-1 text-sm font-semibold text-cau">{d.role}</p>
+    </div>
+  </div>
+
+  {d.research && <p class="mt-4 text-[13.5px] leading-relaxed">{d.research}</p>}
+
+  {
+    d.email && (
+      <a
+        href={`mailto:${d.email}`}
+        class="mt-3 inline-block text-[13px] text-cau transition-all duration-300 ease-in-out hover:underline"
+      >
+        {d.email}
+      </a>
+    )
+  }
+
+  {d.bio && <p class="mt-3 text-[13px] leading-relaxed text-muted">{d.bio}</p>}
+</article>

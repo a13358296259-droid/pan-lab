@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  titleEn?: string;
+  lead?: string;
+}
+const { title, titleEn, lead } = Astro.props;
+---
+
+<section class="border-b border-cau-line bg-page">
+  <div class="mx-auto max-w-6xl px-5 py-14 md:py-16">
+    {
+      titleEn && (
+        <p class="mb-2 text-xs font-semibold tracking-[0.18em] text-cau uppercase">{titleEn}</p>
+      )
+    }
+    <h1 class="text-3xl font-bold tracking-tight md:text-4xl">{title}</h1>
+    {lead && <p class="mt-4 max-w-3xl text-[15px] leading-relaxed text-muted">{lead}</p>}
+  </div>
+</section>

@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { SITE } from '../consts';
+---
+
+<Layout
+  title="加入我们"
+  description="潘保良课题组招收博士、硕士研究生与本科生科研训练，招生方向、要求与申请流程。"
+>
+  <PageHeader
+    title="加入我们"
+    titleEn="Join Us"
+    lead="课题组长期招收对媒介节肢动物生物学、寄生虫病防控与新型兽药制剂感兴趣的博士、硕士研究生，也欢迎本科生进实验室做科研训练。"
+  />
+
+  <div class="mx-auto max-w-6xl px-5 py-14">
+    <div class="grid gap-6 md:grid-cols-3">
+      <section class="card">
+        <h2 class="text-lg font-bold">招生方向</h2>
+        <ul class="mt-4 space-y-2.5 text-[14px] leading-relaxed">
+          <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau"></span><span>预防兽医学 · 学术型硕士 / 博士</span></li>
+          <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau"></span><span>兽医 · 专业学位硕士</span></li>
+          <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau"></span><span>博士后（依托兽医公共卫生安全全国重点实验室）</span></li>
+          <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau"></span><span>本科生科研训练 / 毕业设计</span></li>
+        </ul>
+        <p class="mt-4 text-[12.5px] leading-relaxed text-muted">
+          导师类型：博导兼硕导（以研究生院当年招生目录为准）。
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 class="text-lg font-bold">我们希望你</h2>
+        <ul class="mt-4 space-y-2.5 text-[14px] leading-relaxed">
+          <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau"></span><span>对寄生虫学、媒介生物学或兽药制剂方向有真实兴趣</span></li>
+          <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau"></span><span>本科专业为动物医学、动物科学、生物科学、药学、化学等相关方向</span></li>
+          <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau"></span><span>具备基本的英文文献阅读能力</span></li>
+          <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau"></span><span>愿意动手：螨 / 蜱饲养、分子生物学、细胞与动物试验、制剂工艺</span></li>
+          <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau"></span><span>有耐心、能长期坚持</span></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 class="text-lg font-bold">待遇与支持</h2>
+        <ul class="mt-4 space-y-2.5 text-[14px] leading-relaxed">
+          <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau"></span><span>按中国农业大学研究生奖助体系执行（国家助学金、学业奖学金、助研津贴）</span></li>
+          <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau"></span><span>课题组承担的国家自然科学基金项目提供实验经费与平台支持</span></li>
+          <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau"></span><span>依托兽医公共卫生安全全国重点实验室的仪器与平台条件</span></li>
+          <li class="flex gap-2"><span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau"></span><span>支持参加国内外学术会议与交流</span></li>
+        </ul>
+        <!-- 待补充：如果课题组有额外的助研津贴、住房补贴、出国交流等具体政策，请加在这里 -->
+      </section>
+    </div>
+
+    <section class="mt-14">
+      <p class="text-xs font-semibold tracking-[0.18em] text-cau uppercase">How to Apply</p>
+      <h2 class="mt-2 text-2xl font-bold">申请流程</h2>
+
+      <ol class="mt-8 grid gap-6 md:grid-cols-3">
+        <li class="card">
+          <span class="text-sm font-bold text-cau">STEP 1</span>
+          <h3 class="mt-2 text-base font-bold">发邮件</h3>
+          <p class="mt-2 text-[13.5px] leading-relaxed">
+            把材料发送到 <a href={`mailto:${SITE.email}`} class="text-cau hover:underline">{SITE.email}</a>，
+            邮件标题建议写成：<br />
+            <span class="text-ink">申请加入课题组-姓名-本科学校-专业</span>
+          </p>
+        </li>
+        <li class="card">
+          <span class="text-sm font-bold text-cau">STEP 2</span>
+          <h3 class="mt-2 text-base font-bold">准备材料</h3>
+          <p class="mt-2 text-[13.5px] leading-relaxed">
+            个人简历、本科成绩单、英语水平证明，以及一页以内的研究兴趣说明（为什么想做寄生虫学方向）。
+          </p>
+        </li>
+        <li class="card">
+          <span class="text-sm font-bold text-cau">STEP 3</span>
+          <h3 class="mt-2 text-base font-bold">面谈</h3>
+          <p class="mt-2 text-[13.5px] leading-relaxed">
+            材料初审通过后，我们会约一次线上或线下面谈，聊研究方向与后续安排。
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="mt-14 rounded-2xl bg-cau px-6 py-12 text-center text-white md:px-12">
+      <h2 class="text-2xl font-bold text-white md:text-3xl">现在就联系我们</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/85">
+        有任何关于报考、研究方向或实验条件的问题，都欢迎直接发邮件询问。
+      </p>
+      <a
+        href={`mailto:${SITE.email}?subject=${encodeURIComponent('申请加入课题组')}`}
+        class="btn mt-8 bg-white text-cau transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-cau-light"
+      >
+        发送邮件 · {SITE.email}
+      </a>
+    </section>
+  </div>
+</Layout>

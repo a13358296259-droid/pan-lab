@@ -1,0 +1,11 @@
+---
+title: "Solid lipid nanoparticle suspension enhanced the therapeutic efficacy of praziquantel against tapeworm"
+authors: "Xie S, Pan B, Shi B, Zhang Z, Zhang X, Wang M, Zhou W"
+journal: "Int J Nanomedicine"
+year: 2011
+doi: "10.2147/IJN.S24919"
+pmid: "22072873"
+citation: "51. Int J Nanomedicine. 2011;6:2367-74. doi: 10.2147/IJN.S24919. Epub 2011 Oct 18."
+---
+
+Hydatid disease caused by tapeworm is an increasing public health and socioeconomic concern. In order to enhance the therapeutic efficacy of praziquantel (PZQ) against tapeworm, PZQ-loaded hydrogenated castor oil solid lipid nanoparticle (PZQ-HCO-SLN) suspension was prepared by a hot homogenization and ultrasonication method. The stability of the suspension at 4°C and room temperature was evaluated by the physicochemical characteristics of the nanoparticles and in-vitro release pattern of the suspension. Pharmacokinetics was studied after subcutaneous administration of the suspension in dogs. The therapeutic effect of the novel formulation was evaluated in dogs naturally infected with Echinococcus granulosus. The results showed that the drug recovery of the suspension was 97.59% ± 7.56%. Nanoparticle diameter, polydispersivity index, and zeta potential were 263.00 ± 11.15 nm, 0.34 ± 0.06, and -11.57 ± 1.12 mV, respectively and showed no significant changes after 4 months of storage at both 4°C and room temperature. The stored suspensions displayed similar in-vitro release patterns as that of the newly prepared one. SLNs increased the bioavailability of PZQ 5.67-fold and extended the mean residence time of the drug from 56.71 to 280.38 hours. Single subcutaneous administration of PZQ-HCO-SLN suspension obtained enhanced therapeutic efficacy against tapeworm in infected dogs. At the dose of 5 mg/kg, the stool-ova reduction and negative conversion rates and tapeworm removal rate of the suspension were 100%, while the native PZQ were 91.55%, 87.5%, and 66.7%. When the dose reduced to 0.5 mg/kg, the native drug showed no effect, but the suspension still got the same therapeutic efficacy as that of the 5 mg/kg native PZQ. These results demonstrate that the PZQ-HCO-SLN suspension is a promising formulation to enhance the therapeutic efficacy of PZQ.

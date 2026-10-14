@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { SITE, asset, link } from '../consts';
+---
+
+<Layout
+  title="联系方式"
+  description="潘保良课题组联系方式：中国农业大学动物医学院，邮箱 baoliang@cau.edu.cn，电话 010-62734098。"
+>
+  <PageHeader
+    title="联系方式"
+    titleEn="Contact"
+    lead="欢迎通过邮件或电话与我们联系；报考与进组咨询请优先使用邮件，并注明来意。"
+  />
+
+  <div class="mx-auto max-w-6xl px-5 py-14">
+    <div class="grid gap-6 md:grid-cols-3">
+      <a href={`mailto:${SITE.email}`} class="card block">
+        <p class="text-xs font-semibold tracking-[0.16em] text-muted uppercase">Email</p>
+        <h2 class="mt-3 text-lg font-bold text-cau">{SITE.email}</h2>
+        <p class="mt-3 text-[13.5px] leading-relaxed text-muted">
+          招生、合作、学术交流均可来信，一般 3 个工作日内回复。
+        </p>
+      </a>
+
+      <a href={`tel:${SITE.phone}`} class="card block">
+        <p class="text-xs font-semibold tracking-[0.16em] text-muted uppercase">Tel</p>
+        <h2 class="mt-3 text-lg font-bold text-cau">{SITE.phone}</h2>
+        <p class="mt-3 text-[13.5px] leading-relaxed text-muted">
+          办公时间：周一至周五 9:00–17:00（法定节假日除外）。
+        </p>
+      </a>
+
+      <div class="card">
+        <p class="text-xs font-semibold tracking-[0.16em] text-muted uppercase">Address</p>
+        <h2 class="mt-3 text-lg font-bold text-ink">{SITE.addressFull}</h2>
+        <p class="mt-3 text-[13.5px] leading-relaxed text-muted">
+          {SITE.address}<br />
+          {SITE.school}{SITE.college}
+        </p>
+      </div>
+    </div>
+
+    <section class="mt-14">
+      <p class="text-xs font-semibold tracking-[0.18em] text-cau uppercase">Location</p>
+      <h2 class="mt-2 text-2xl font-bold">位置</h2>
+
+      <div
+        class="mt-8 overflow-hidden rounded-2xl border border-cau-line transition-all duration-300 ease-in-out hover:scale-[1.01] hover:shadow-xl"
+      >
+        <img
+          src={asset('images/campus-map.svg')}
+          alt={`${SITE.school}${SITE.college} 位置示意图`}
+          width="1200"
+          height="620"
+          class="w-full"
+          loading="lazy"
+        />
+      </div>
+
+      <p class="mt-4 text-xs leading-relaxed text-muted">
+        以上为位置示意图。如需精确导航，可在地图应用中搜索“中国农业大学西校区动物医学院”。
+      </p>
+    </section>
+
+    <section class="mt-14 grid gap-6 rounded-2xl border border-cau-line bg-page p-8 md:grid-cols-[1.4fr_1fr] md:items-center">
+      <div>
+        <h2 class="text-xl font-bold">报考与进组咨询</h2>
+        <p class="mt-3 text-[14px] leading-relaxed text-muted">
+          如果你是想报考的同学，建议先读一读“研究方向”和“加入我们”两页，再把简历与研究兴趣发到上面的邮箱，我们会尽快回复。
+        </p>
+      </div>
+      <div class="flex md:justify-end">
+        <a href={link('join')} class="btn btn-primary">查看招生信息</a>
+      </div>
+    </section>
+  </div>
+</Layout>

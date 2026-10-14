@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import MemberCard from '../components/MemberCard.astro';
+
+const members = (await getCollection('members')).sort((a, b) => {
+  if (a.data.order !== b.data.order) return a.data.order - b.data.order;
+  return a.data.name.localeCompare(b.data.name, 'zh-Hans-CN');
+});
+---
+
+<Layout
+  title="团队成员"
+  description="中国农业大学动物医学院潘保良课题组团队成员：教师、博士后、博士与硕士研究生。"
+>
+  <PageHeader
+    title="团队成员"
+    titleEn="Members"
+    lead="课题组依托兽医公共卫生安全全国重点实验室，欢迎志同道合的同学加入。"
+  />
+
+  <div class="mx-auto max-w-6xl px-5 py-14">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {members.map((member) => <MemberCard member={member} />)}
+    </div>
+  </div>
+</Layout>

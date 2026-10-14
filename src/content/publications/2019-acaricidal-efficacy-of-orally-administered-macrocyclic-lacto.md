@@ -1,0 +1,11 @@
+---
+title: "Acaricidal efficacy of orally administered macrocyclic lactones against poultry red mites (Dermanyssus gallinae) on chicks and their impacts on mite reproduction and blood-meal digestion"
+authors: "Xu X, Wang C, Zhang S, Huang Y, Pan T, Wang B, Pan B"
+journal: "Parasit Vectors"
+year: 2019
+doi: "10.1186/s13071-019-3599-0"
+pmid: "31300011"
+citation: "37. Parasit Vectors. 2019 Jul 12;12(1):345. doi: 10.1186/s13071-019-3599-0."
+---
+
+BACKGROUND: The poultry red mite (PRM), Dermanyssus gallinae, is one of the most economically deleterious threats to laying-hen industry worldwide. Macrocyclic lactones (MLs) have been widely used in control of mites in mammals, but the effects of MLs on PRMs are not well studied. The main objective of the present study was to systematically evaluate the effects of three MLs, i.e. eprinomectin (EPR), moxidectin (MOX) or ivermectin (IVM), on PRMs fed on chicks following oral administration. METHODS: Chicks in treatment groups were orally administrated with EPR, MOX or IVM at a dose of 5.0 mg/kg bodyweight. Chicks in the control group received the carrier solvent without drug. Chicks in each cage were then infested with 200 starved adult D. gallinae. After infestation and feeding for 12 h, engorged mites were collected to evaluate the acaricidal efficacy of the MLs, and its impacts on the reproduction and blood-meal digestion of D. gallinae. RESULTS: MOX, IVM and EPR demonstrated higher acaricidal efficacies post-treatment compared with the control, i.e. 45.60% for MOX, 71.32% for IVM and 100% for EPR on Day 10. MLs did not have significant effects on the blood-meal ingestion of PRMs, but significantly slowed down blood digestion (P < 0.0001). The oviposition rate, egg hatching rate and fecundity of PRMs in treatment groups were remarkably reduced. Among the three MLs, EPR exhibited the highest performance against PRMs, with an oviposition rate of 1.04%, fecundity of 0.33 eggs per mite and a zero egg hatching rate in EPR treated groups. CONCLUSIONS: EPR, MOX or IVM administrated orally to chicks increased the mortality of D. gallinae, significantly slowed down their blood-meal digestion and significantly reduced their reproductive capability which included the oviposition rate, fecundity and egg hatching rate. The present study highlights the potential of MLs in the control of PRMs.

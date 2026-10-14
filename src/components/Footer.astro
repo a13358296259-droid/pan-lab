@@ -1,0 +1,55 @@
+---
+import { SITE, NAV, link } from '../consts';
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-24 border-t border-cau-line bg-page">
+  <div class="mx-auto grid max-w-6xl gap-10 px-5 py-12 md:grid-cols-3">
+    <div>
+      <p class="text-base font-bold text-ink">{SITE.name}（{SITE.nameEn}）</p>
+      <p class="mt-3 text-sm leading-relaxed text-muted">
+        {SITE.school}{SITE.college}<br />
+        {SITE.lab}
+      </p>
+    </div>
+
+    <div>
+      <p class="text-sm font-semibold text-ink">快速导航</p>
+      <ul class="mt-3 grid grid-cols-2 gap-y-2 text-sm">
+        {
+          NAV.map((item) => (
+            <li>
+              <a
+                href={link(item.path)}
+                class="text-muted transition-all duration-300 ease-in-out hover:text-cau hover:underline"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <p class="text-sm font-semibold text-ink">联系方式</p>
+      <ul class="mt-3 space-y-2 text-sm text-muted">
+        <li>
+          邮箱：<a
+            href={`mailto:${SITE.email}`}
+            class="text-cau transition-all duration-300 ease-in-out hover:underline"
+            >{SITE.email}</a
+          >
+        </li>
+        <li>电话：{SITE.phone}</li>
+        <li>地址：{SITE.address}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-cau-line">
+    <p class="mx-auto max-w-6xl px-5 py-5 text-xs text-muted">
+      © {year} {SITE.name} · {SITE.school} · 保留所有权利
+    </p>
+  </div>
+</footer>

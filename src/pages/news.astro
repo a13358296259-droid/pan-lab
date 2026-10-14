@@ -1,0 +1,58 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { fmtDate } from '../consts';
+
+const items = (await getCollection('news')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const rendered = await Promise.all(
+  items.map(async (entry) => ({ entry, Content: (await render(entry)).Content }))
+);
+---
+
+<Layout
+  title="新闻动态"
+  description="潘保良课题组的科研成果、学术交流与团队活动动态。"
+>
+  <PageHeader title="新闻动态" titleEn="News" lead="科研成果、学术交流与团队活动，按时间倒序排列。" />
+
+  <div class="mx-auto max-w-4xl px-5 py-14">
+    {
+      rendered.length === 0 && (
+        <p class="rounded-xl border border-dashed border-cau-line p-10 text-center text-sm text-muted">
+          暂无动态。在 src/content/news/ 下新增一个 Markdown 文件即可发布一条。
+        </p>
+      )
+    }
+
+    <div class="space-y-6">
+      {
+        rendered.map(({ entry, Content }) => (
+          <article class="card">
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <time class="text-sm font-semibold text-cau" datetime={fmtDate(entry.data.date)}>
+                {fmtDate(entry.data.date)}
+              </time>
+              {entry.data.tags.map((t) => (
+                <span class="tag">{t}</span>
+              ))}
+            </div>
+
+            <h2 class="mt-3 text-lg leading-snug font-bold text-ink">{entry.data.title}</h2>
+
+            {entry.data.summary && (
+              <p class="mt-2 text-[14px] leading-relaxed text-muted">{entry.data.summary}</p>
+            )}
+
+            <div class="mt-4 border-t border-cau-line pt-4 text-[14px] leading-relaxed">
+              <Content />
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

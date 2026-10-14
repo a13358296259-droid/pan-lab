@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { RESEARCH, PROJECTS } from '../data/research';
+---
+
+<Layout title="研究方向" description="潘保良课题组研究方向：媒介节肢动物生物学、共生菌与宿主互作、抗药性与化学防治、抗寄生虫新兽药与长效制剂。">
+  <PageHeader
+    title="研究方向"
+    titleEn="Research"
+    lead="课题组以鸡皮刺螨、蜱等媒介节肢动物为主要研究对象，围绕生物学基础、共生菌互作、抗药性机制与新型防控产品，形成从基础到应用的完整链条。"
+  />
+
+  <div class="mx-auto max-w-6xl px-5 py-14">
+    <div class="space-y-6">
+      {
+        RESEARCH.map((area, i) => (
+          <section id={area.id} class="card scroll-mt-24">
+            <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <span class="text-sm font-bold text-cau">{String(i + 1).padStart(2, '0')}</span>
+              <h2 class="text-xl font-bold">{area.title}</h2>
+              <span class="text-[11px] tracking-[0.12em] text-muted uppercase">{area.titleEn}</span>
+            </div>
+
+            <p class="mt-4 max-w-4xl text-[14.5px] leading-relaxed">{area.summary}</p>
+
+            <ul class="mt-5 grid gap-x-8 gap-y-2 md:grid-cols-2">
+              {area.points.map((pt) => (
+                <li class="flex gap-2 text-[13.5px] leading-relaxed text-body">
+                  <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau" />
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+
+    <section class="mt-14">
+      <p class="text-xs font-semibold tracking-[0.18em] text-cau uppercase">Projects</p>
+      <h2 class="mt-2 text-2xl font-bold">在研项目</h2>
+
+      <ul class="mt-8 space-y-3">
+        {
+          PROJECTS.map((p) => (
+            <li class="flex gap-3 rounded-xl border border-cau-line bg-white px-5 py-4 text-[14px] leading-relaxed transition-all duration-300 ease-in-out hover:border-cau hover:shadow-md">
+              <span class="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-cau" />
+              <span>{p}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+</Layout>
