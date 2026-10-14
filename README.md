@@ -143,6 +143,23 @@ tags: [论文发表]
 2. 进入 `public` → `images` → **Add file** → **Upload files**，把截图传上去，命名成 `campus-map.png`。
 3. 打开 `src/pages/contact.astro`，把 `asset('images/campus-map.svg')` 改成 `asset('images/campus-map.png')`，Commit changes。
 
+### 换首页右侧的堆叠相册
+
+首页右上角那两张照片（叠在一起，鼠标移上去会自动翻阅）由这个文件控制：
+
+```
+src/data/photos.ts
+```
+
+- **换照片**：先把图片传到 `public` → `images` 文件夹（Add file → Upload files），
+  再打开 `src/data/photos.ts`，把对应那一行的 `src` 改成新文件名、`alt` 改成一句图片说明。
+- **加照片**：照着数组里的样子再加一行就行，相册会自动变成 3 张、4 张……
+  （堆叠张数不限，但建议控制在 5 张以内，看起来更干净。）
+- **删照片**：把那一行删掉即可。
+- 图片建议先压到 **1100 像素宽、200 KB 以内**，网页打开才快。
+
+> ⚠️ 网站是公开的，谁都能看到。放人物照片前，请确认照片里的人都同意。
+
 ---
 
 ## 四、还没做的 / 需要你决定的事
@@ -185,6 +202,7 @@ lab_website/
 └─ src/
    ├─ consts.ts            ← 课题组名称、邮箱、电话、导航栏
    ├─ data/research.ts     ← 研究方向、在研项目
+   ├─ data/photos.ts       ← 首页右侧堆叠相册的照片清单
    ├─ content/             ← 所有内容（Markdown）
    │  ├─ members/            成员
    │  ├─ publications/       论文（57 篇，由 PubMed 导出自动生成）
